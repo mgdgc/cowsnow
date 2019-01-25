@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>CowSnow 로그인</title>
+    <meta charset="utf-8">
+    <meta userName="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+    <style>
+        input[type=submit] {
+            margin-top: 24px;
+            width: 100%;
+            color: white;
+            background: #4dd0e1;
+            padding: 8px;
+            font-size: 18px;
+            border: 0px;
+            border-radius: 16px;
+            box-shadow: 0px 2px 4px #a7f2fc;
+            transition-duration: 0.1s;
+        }
+        
+        input[type=submit]:hover {
+            box-shadow: 0px 4px 6px #83e1ed;
+            transition-duration: 0.1s;
+        }
+        
+        input[type=submit]:active {
+            background: #31b9cb;
+            box-shadow: 0px 1px 2px #a7f2fc;
+            transition-duration: 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CowSnow 로그인</h1>
+    </header>
+
+    <div class="body" align="center" onsubmit="return verify();">
+        <p>서비스 이용을 위해 로그인을 해 주세요.</p>
+        <form method="post" action="authenticate.jsp">
+            <table>
+                <tr>
+                    <th><label>email </label></th>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                <tr>
+                    <th><label>비밀번호 </label></th>
+                    <td><input type="password" name="pw"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="로그인"></td>
+                </tr>
+            </table>
+        </form>
+        <p style="font-size: 14px; color: gray;">
+            아직 CowSnow 회원이 아니세요?
+            <br><button onclick="window.location='register.jsp';">회원가입</button>
+        </p>
+    </div>
+
+    <footer>
+        CowSnow by Choi Myeong-geun
+        <br><a href="http://ridsoft.xyz">RiDsoft</a> presents
+        | <a href="mailto:soc06212@gmail.com">soc06212@gmail.com</a>
+    </footer>
+
+</body>
+<script>
+    function verify() {
+        var email = document.getElementsByName("email")[0].value;
+        var pw = document.getElementsByName("pw")[0].value;
+        
+        if (email.trim().length === 0) {
+            alert("이메일을 확인해 주세요.");
+            return false;
+        } else {
+            if (pw.trim().length === 0) {
+                alert("비밀번호를 확인해 주세요.");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        
+    }
+</script>
+</html>

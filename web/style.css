@@ -1,0 +1,257 @@
+* {
+    box-sizing: content-box;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    cursor: default;
+    user-select: none;
+    color: white;
+    background: #4dd0e1;
+    box-shadow: 0px 2px 4px lightgrey;
+}
+
+header > h1 {
+    margin: 0px;
+    padding: 14px;
+    text-align: center;
+}
+
+header > #btnNav {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    padding: 0px;
+    background-color: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    outline: none;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+}
+
+nav > ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav > ul > li {
+    cursor: default;
+    color: white;
+    margin-right: 64px;
+    margin-top: 48px;
+    font-size: 24px;
+    font-weight: lighter;
+    text-shadow: 0px 1px 2px white;
+    transition-duration: 0.1s;
+}
+
+nav > ul > li:hover {
+    text-shadow: 0px 2px 6px white;
+    transition-duration: 0.1s;
+}
+
+footer {
+    padding: 16px;
+    background: #ededed;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: gray;
+}
+
+footer > a {
+    color: darkgrey;
+}
+
+div.body {
+    width: 100%;
+}
+
+div.body > table {
+    font-size: 16px;
+    max-width: 480px;
+    min-width: 160px;
+    text-align: center;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    font-size: 16px;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 4px;
+    border-color: transparent;
+    background: #ededed;
+    transition-duration: 0.1s;
+}
+
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=email]:hover {
+    margin: 4px;
+    border-color: transparent;
+    background: #ededed;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px lightgrey;
+    transition-duration: 0.1s;
+}
+
+button {
+    padding: 2px 4px 2px 4px;
+    font-size: 12px;
+    margin: 8px;
+    background: white;
+    border-radius: 4px;
+    border-color: transparent;
+    box-shadow: 0px 2px 4px lightgrey;
+    transition-duration: 0.1s;
+}
+
+button:hover {
+    box-shadow: 0px 4px 6px lightgrey;
+    transition-duration: 0.1s;
+}
+
+button:active {
+    color: black;
+    background: #ededed;
+    box-shadow: 0px 1px 2px lightgrey;
+    transition-duration: 0.1s;
+}
+
+button.goBack {
+    background: transparent;
+    color: white;
+    left: 0;
+    top: 12px;
+    position: absolute;
+    box-shadow: 0px 0px 0px transparent;
+    font-size: 16px;
+}
+
+button#btnComplete {
+    font-size: 24px;
+    color: white;
+    background: #4dd0e1;
+    transition-duration: 0.1s;
+}
+
+button#btnComplete:hover {
+    box-shadow: 0px 2px 4px lightgray;
+    transition-duration: 0.1s;
+}
+
+button#btnComplete:active {
+    box-shadow: 0px 1px 2px lightgray;
+    transition-duration: 0.1s;
+}
+
+div.card {
+    position: static;
+    max-width: 640px;
+    margin: 24px;
+    background: white;
+    border: 0 solid transparent;
+    border-radius: 8px;
+    box-shadow: 2px 4px 16px rgba(128, 128, 128, 0.3);
+}
+
+div.card > table {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+button.actionButton {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    padding: 0px;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    outline: none;
+}
+
+img.actionButtonSrc {
+    width: 56px;
+    height: 56px;
+}
+
+textarea {
+    background: #f0f0f0;
+    margin-top: 24px;
+    max-width: 640px;
+    min-height: 360px;
+    width: 80%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 2px 4px 16px rgba(128, 128, 128, 0.3);
+    font-size: 12px;
+}
+
+#txtTitle {
+    margin-top: 24px;
+    max-width: 640px;
+    width: 80%;
+    padding: 4px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 2px 4px 16px rgba(128, 128, 128, 0.3);
+}
+
+button#submitWriting {
+    color: white;
+    background: #4dd0e1;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+div.info {
+    text-align: center;
+    color: gray;
+    background: #ededed;
+    margin: 16px;
+    padding: 4px;
+    border-radius: 24px;
+    box-shadow: 2px 2px 8px #cccccc;
+    font-size: 12px;
+}
+
+article {
+    min-height: 260px;
+    margin: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 16px #cccccc;
+}
+
+div.commentary {
+    min-height: 260px;
+    margin: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 16px #cccccc;
+}

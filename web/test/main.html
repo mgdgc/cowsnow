@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>CowSnow</title>
+    <meta charset="utf-8">
+    <meta userName="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:200,400" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <button id="btnNav"><img id="btnNavImg" src="/res/1x/baseline_menu_white_36dp.png" draggable="false"></button>
+        <h1>CowSnow</h1>
+    </header>
+    <nav id="nav" hidden>
+        <ul>
+            <li><a>계정</a></li>
+            <li><a>최신 글 보기</a></li>
+            <li><a>연재중인 작품</a></li>
+            <li><a>인기 작품</a></li>
+        </ul>
+    </nav>
+    <div class="body" align="center">
+        <h3 style="font-weight: normal;">최신순</h3>
+        <div class="card">
+            <table>
+                <tr>
+                    <th>등록일</th>
+                    <th>제목</th>
+                    <th>작가</th>
+                </tr>
+                <tr>
+                    <td>2018.12.20</td>
+                    <td>바람 잘 날 없는 나무</td>
+                    <td>RiD</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3 style="font-weight: normal;">인기순</h3>
+        <div class="card">
+            <table>
+                <tr>
+                    <th>조회수</th>
+                    <th>제목</th>
+                    <th>작가</th>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>바람 잘 날 없는 나무</td>
+                    <td>RiD</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div>
+        <button class="actionButton">
+            <img class="actionButtonSrc" src="/res/2x/btn_write.png"
+                 draggable="false">
+        </button>
+    </div>
+</body>
+<script>
+    var nav = document.getElementById("nav");
+    var btnNav = document.getElementById("btnNav");
+    var imgNav = document.getElementById("btnNavImg");
+
+    var navOpen = false;
+    btnNav.addEventListener("click", function() {
+        if (navOpen) {
+            nav.setAttribute("hidden", "");
+            imgNav.setAttribute("src", "/res/1x/baseline_menu_white_36dp.png");
+        } else {
+            nav.removeAttribute("hidden");
+            imgNav.setAttribute("src", "/res/1x/baseline_close_white_36dp.png");
+        }
+        navOpen = !navOpen;
+    });
+</script>
+</html>

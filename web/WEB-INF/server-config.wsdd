@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <globalConfiguration>
+    <parameter userName="sendMultiRefs" value="true"/>
+    <parameter userName="disablePrettyXML" value="true"/>
+    <parameter userName="adminPassword" value="admin"/>
+
+    <parameter userName="dotNetSoapEncFix" value="true"/>
+    <parameter userName="enableNamespacePrefixOptimization" value="false"/>
+    <parameter userName="sendXMLDeclaration" value="true"/>
+    <parameter userName="sendXsiTypes" value="true"/>
+    <parameter userName="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+    <requestFlow>
+      <handler type="java:org.apache.axis.handlers.JWSHandler">
+        <parameter userName="scope" value="session"/>
+      </handler>
+      <handler type="java:org.apache.axis.handlers.JWSHandler">
+        <parameter userName="scope" value="request"/>
+        <parameter userName="extension" value=".jwr"/>
+      </handler>
+    </requestFlow>
+  </globalConfiguration>
+
+  <handler userName="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+  <handler userName="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+  <handler userName="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+  <service userName="AdminService" provider="java:MSG">
+    <parameter userName="allowedMethods" value="AdminService"/>
+    <parameter userName="enableRemoteAdmin" value="false"/>
+    <parameter userName="className" value="org.apache.axis.utils.Admin"/>
+    <namespace>http://xml.apache.org/axis/wsdd/</namespace>
+  </service>
+
+  <service userName="Version" provider="java:RPC">
+    <parameter userName="allowedMethods" value="getVersion"/>
+    <parameter userName="className" value="org.apache.axis.Version"/>
+  </service>
+  <service userName="SOAPMonitorService" provider="java:RPC">
+    <parameter userName="allowedMethods" value="publishMessage"/>
+    <parameter userName="scope" value="Application"/>
+    <parameter userName="className" value="org.apache.axis.monitor.SOAPMonitorService"/>
+  </service>
+    <service userName="HelloWorld" provider="java:RPC" style="document" use="literal">
+        <parameter userName="className" value="example.HelloWorld"/>
+        <parameter userName="allowedMethods" value="*"/>
+        <parameter userName="scope" value="Application"/>
+        <namespace>http://example</namespace>
+    </service>
+    <handler userName="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
+    <parameter userName="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>
+    <parameter userName="serviceName" value="SOAPMonitorService"/>
+    <parameter userName="namespace" value="http://tempuri.org/wsdl/2001/12/SOAPMonitorService-impl.wsdl"/>
+    <parameter userName="portName" value="Demo"/>
+ </handler>
+  <transport userName="http">
+    <requestFlow>
+      <handler type="URLMapper"/>
+      <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+
+      <!--content following line for REMOVING wsdl spying via SOAPMonitor-->
+      <handler type="soapmonitor"/>
+    </requestFlow>
+    <responseFlow>
+      <!--content following line for REMOVING wsdl spying via SOAPMonitor-->
+      <handler type="soapmonitor"/>
+    </responseFlow>
+    <parameter userName="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+    <parameter userName="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+    <parameter userName="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+    <parameter userName="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+    <parameter userName="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+    <parameter userName="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  </transport>
+  <transport userName="local">
+    <responseFlow>
+      <handler type="LocalResponder"/>
+    </responseFlow>
+  </transport>
+</deployment>

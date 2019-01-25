@@ -1,0 +1,91 @@
+* {
+    box-sizing: content-box;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    color: white;
+    background: #4dd0e1;
+    box-shadow: 0px 2px 4px lightgrey;
+}
+
+header>h1 {
+    margin: 0px;
+    padding: 26px;
+    text-align: center;
+}
+
+footer {
+    padding: 16px;
+    background: #ededed;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: gray;
+}
+
+footer>a {
+    color: darkgrey;
+}
+
+div.body {
+    width: 100%;
+}
+
+div.body>table {
+    font-size: 16px;
+    max-width: 480px;
+    min-width: 160px;
+    text-align: center;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    font-size: 16px;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 4px;
+    border-color: transparent;
+    background: #ededed;
+    transition-duration: 0.1s;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover {
+    margin: 4px;
+    border-color: transparent;
+    background: #ededed;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px lightgrey;
+    transition-duration: 0.1s;
+}
+
+button {
+    padding: 2px 4px 2px 4px;
+    font-size: 12px;
+    margin: 8px;
+    background: white;
+    border-radius: 4px;
+    border-color: transparent;
+    box-shadow: 0px 2px 4px lightgrey;
+    transition-duration: 0.1s;
+}
+
+button:hover {
+    box-shadow: 0px 4px 6px lightgrey;
+    transition-duration: 0.1s;
+}
+
+button:active {
+    color: black;
+    background: #ededed;
+    box-shadow: 0px 1px 2px lightgrey;
+    transition-duration: 0.1s;
+}
