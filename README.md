@@ -2,7 +2,7 @@
 
 <img src="res/app_icon.png" alt="App icon" width="250px">
 
-1학년 2학기 웹프로그래밍 프로젝트
+2018년 2학기 웹프로그래밍 프로젝트
 
 ## 배경 및 동기
 
